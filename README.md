@@ -37,7 +37,7 @@
 ```text
 graduation-uploader/
   README.md
-  public/
+  root/
     index.html
     styles.css
     app.js
@@ -114,7 +114,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 - 一定要用 `任何人`（否則 GitHub Pages 前端無法匿名呼叫）
 - Apps Script 會用你的帳號權限寫入 Drive / Sheets
 
-## 8) 設定前端 `public/config.js`
+## 8) 設定前端 `root/config.js`
 
 修改以下值：
 
@@ -134,7 +134,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 2. 將本專案上傳
 3. 到 GitHub `Settings` -> `Pages`
 4. `Source` 選 `Deploy from a branch`
-5. Branch 選 `main`，資料夾選 `/public`（或你也可改用 root 目錄）
+5. Branch 選 `main`，資料夾選 `/root`（或你也可改用 root 目錄）
 6. 儲存後等待部署完成，取得網站網址
 
 ## API 介面說明
@@ -193,7 +193,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 ## 常見錯誤排查
 
 1. `請先設定 SCRIPT_URL`
-   - `public/config.js` 還是預設值，請改成正式 `/exec` URL
+   - `root/config.js` 還是預設值，請改成正式 `/exec` URL
 
 2. `投稿碼錯誤`
    - 前端輸入碼與 `Code.gs` 的 `UPLOAD_CODE` 不一致

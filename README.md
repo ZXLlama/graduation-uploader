@@ -37,7 +37,7 @@
 ```text
 graduation-uploader/
   README.md
-  root/
+  (root)/
     index.html
     styles.css
     app.js
@@ -61,12 +61,12 @@ graduation-uploader/
    - `高三/...`
    - `其他/...`
 
-## 2) 取得 ROOT_FOLDER_ID
+## 2) 取得 (root)_FOLDER_ID
 
 1. 打開該 Drive 資料夾
 2. 網址通常長這樣：
    - `https://drive.google.com/drive/folders/xxxxxxxxxxxxxxxxxxxx`
-3. `folders/` 後面的字串就是 `ROOT_FOLDER_ID`
+3. `folders/` 後面的字串就是 `(root)_FOLDER_ID`
 
 ## 3) 建立 / 綁定 Google Sheets
 
@@ -85,7 +85,7 @@ graduation-uploader/
 
 請修改最上方 `CONFIG`：
 
-- `ROOT_FOLDER_ID`: 你的 Drive 根資料夾 ID
+- `(root)_FOLDER_ID`: 你的 Drive 根資料夾 ID
 - `SPREADSHEET_ID`: 你的 Google Sheets ID
 - `UPLOAD_CODE`: 投稿碼（後端真正驗證用）
 - `DEADLINE_ISO`: 截止時間（ISO 格式，建議含時區）
@@ -94,7 +94,7 @@ graduation-uploader/
 範例：
 
 ```js
-ROOT_FOLDER_ID: '1AbCdEfGhIjKlMnOpQrStUvWxYz',
+(root)_FOLDER_ID: '1AbCdEfGhIjKlMnOpQrStUvWxYz',
 SPREADSHEET_ID: '1x2y3z4a5b6c7d8e9f...',
 UPLOAD_CODE: 'P3CLASS2026',
 DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
@@ -114,7 +114,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 - 一定要用 `任何人`（否則 GitHub Pages 前端無法匿名呼叫）
 - Apps Script 會用你的帳號權限寫入 Drive / Sheets
 
-## 8) 設定前端 `root/config.js`
+## 8) 設定前端 `(root)/config.js`
 
 修改以下值：
 
@@ -134,7 +134,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 2. 將本專案上傳
 3. 到 GitHub `Settings` -> `Pages`
 4. `Source` 選 `Deploy from a branch`
-5. Branch 選 `main`，資料夾選 `/root`（或你也可改用 root 目錄）
+5. Branch 選 `main`，資料夾選 `/(root)`（或你也可改用 (root) 目錄）
 6. 儲存後等待部署完成，取得網站網址
 
 ## API 介面說明
@@ -193,7 +193,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
 ## 常見錯誤排查
 
 1. `請先設定 SCRIPT_URL`
-   - `root/config.js` 還是預設值，請改成正式 `/exec` URL
+   - `(root)/config.js` 還是預設值，請改成正式 `/exec` URL
 
 2. `投稿碼錯誤`
    - 前端輸入碼與 `Code.gs` 的 `UPLOAD_CODE` 不一致
@@ -211,7 +211,7 @@ DEADLINE_ISO: '2026-06-10T23:59:59+08:00',
    - 檢查 `SPREADSHEET_ID` 是否正確、Web App 授權是否完成
 
 7. Drive 沒看到檔案
-   - 檢查 `ROOT_FOLDER_ID` 是否正確，確認部署是最新版本
+   - 檢查 `(root)_FOLDER_ID` 是否正確，確認部署是最新版本
 
 ## 限制與注意事項（務必閱讀）
 

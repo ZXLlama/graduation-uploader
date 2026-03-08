@@ -6,8 +6,8 @@ window.APP_CONFIG = Object.freeze({
   DEADLINE_ISO: "2026-07-01T23:59:59+08:00",
 
   // 前端是否也比對投稿碼（公開網站不建議硬寫真實碼，預設關閉）
-  ENABLE_CLIENT_UPLOAD_CODE_CHECK: true,
-  CLIENT_UPLOAD_CODE: "ZXSNOW",
+  ENABLE_CLIENT_UPLOAD_CODE_CHECK: false,
+  CLIENT_UPLOAD_CODE: " ",
 
   // 限制設定
   MAX_IMAGE_MB: 20,

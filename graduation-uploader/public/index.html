@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="國一到高三畢業回憶素材收集網站" />
+    <title>國一到高三畢業回憶素材收集</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <main class="container">
+      <section class="card hero">
+        <p class="eyebrow">Class of 2026 • Time Capsule</p>
+        <h1>國一到高三畢業回憶素材收集</h1>
+        <p class="subtitle">
+          把國一到高三最好笑、最經典、最值得留下的瞬間，集中上傳到同一個地方。
+        </p>
+
+        <div class="deadline-panel">
+          <p>
+            投稿截止：
+            <strong id="deadlineText">載入中...</strong>
+          </p>
+          <p id="countdownText" class="countdown">計算倒數中...</p>
+          <span id="statusBadge" class="badge">檢查中</span>
+        </div>
+      </section>
+
+      <section class="card form-card">
+        <form id="uploadForm" novalidate>
+          <div class="form-grid">
+            <label class="field">
+              <span>投稿碼 *</span>
+              <input
+                id="uploadCode"
+                name="uploadCode"
+                type="password"
+                autocomplete="off"
+                required
+                placeholder="請輸入投稿碼"
+              />
+            </label>
+
+            <label class="field">
+              <span>暱稱 / 名字 *</span>
+              <input
+                id="nickname"
+                name="nickname"
+                type="text"
+                maxlength="40"
+                required
+                placeholder="請填寫你的暱稱或名字"
+              />
+            </label>
+
+            <label class="field">
+              <span>素材年代 *</span>
+              <select id="gradePeriod" name="gradePeriod" required>
+                <option value="國一">國一</option>
+                <option value="國二">國二</option>
+                <option value="國三">國三</option>
+                <option value="高一">高一</option>
+                <option value="高二">高二</option>
+                <option value="高三" selected>高三</option>
+                <option value="其他">其他</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>素材類型 *</span>
+              <select id="category" name="category" required>
+                <option value="照片" selected>照片</option>
+                <option value="影片">影片</option>
+                <option value="迷因">迷因</option>
+                <option value="經典事件">經典事件</option>
+                <option value="班級日常">班級日常</option>
+                <option value="社團活動">社團活動</option>
+                <option value="校慶運動會">校慶運動會</option>
+                <option value="校外教學">校外教學</option>
+                <option value="考前衝刺">考前衝刺</option>
+                <option value="老師語錄">老師語錄</option>
+                <option value="畢業活動">畢業活動</option>
+                <option value="其他趣事">其他趣事</option>
+              </select>
+            </label>
+
+            <label class="field field-full">
+              <span>備註（選填）</span>
+              <textarea
+                id="note"
+                name="note"
+                maxlength="500"
+                rows="3"
+                placeholder="例如：校慶大隊接力、福利社爆笑片段..."
+              ></textarea>
+            </label>
+          </div>
+
+          <div id="dropZone" class="drop-zone" tabindex="0" role="button">
+            <input
+              id="fileInput"
+              name="files"
+              type="file"
+              multiple
+              hidden
+              accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.heif,.heic,image/jpeg,image/png,image/webp,image/heic,image/heif,video/mp4,video/quicktime"
+            />
+            <div class="drop-content">
+              <p class="drop-title">拖曳檔案到這裡，或點擊選擇</p>
+              <p class="drop-desc">支援一次多檔。圖片可預覽，影片會顯示檔名與大小。</p>
+              <button id="pickBtn" type="button" class="btn ghost">選擇檔案</button>
+            </div>
+          </div>
+
+          <div class="summary-row">
+            <span id="fileCount">0 檔案</span>
+            <span id="fileSize">總大小 0 B</span>
+          </div>
+
+          <ul id="fileList" class="file-list" aria-live="polite"></ul>
+
+          <div class="action-row">
+            <button id="submitBtn" class="btn primary" type="submit">開始上傳</button>
+            <button id="clearBtn" class="btn ghost" type="button">清空已選</button>
+          </div>
+
+          <p id="progressText" class="progress-text"></p>
+          <p id="messageText" class="message-text" aria-live="assertive"></p>
+        </form>
+      </section>
+
+      <footer class="footnote">
+        建議以照片為主、影片少量且盡量壓縮，能大幅降低失敗率。
+      </footer>
+    </main>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
